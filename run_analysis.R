@@ -16,27 +16,27 @@ unzip(zipfile="./data/Dataset.zip",exdir="./data")
 #### 1. Merges the training and the test sets to create one data set.
 
 ## The below code will read the train and test data 
-x_test <- read.table("X_test.txt")
+x_test <- read.table("./data/UCI HAR Dataset/test/X_test.txt")
 colnames(x_test) <- features[,2]
 
-y_test <- read.table("y_test.txt")
+y_test <- read.table("./data/UCI HAR Dataset/test/y_test.txt")
 colnames(y_test) <- c('ActivityID')
 
-subject_test <- read.table("subject_test.txt")
+subject_test <- read.table("./data/UCI HAR Dataset/test/subject_test.txt")
 colnames(subject_test) <- c('SubjectID')
 
-x_train <- read.table("X_Train.txt")
+x_train <- read.table("./data/UCI HAR Dataset/train/X_Train.txt")
 colnames(x_train) <- features[,2]
 
-y_train <- read.table("y_train.txt")
+y_train <- read.table("./data/UCI HAR Dataset/train/y_train.txt")
 colnames(y_train) <- c('ActivityID')
 
-subject_train <- read.table("subject_train.txt")
+subject_train <- read.table("./data/UCI HAR Dataset/train/subject_train.txt")
 colnames(subject_train) <- c('SubjectID')
 
-features <- read.table("features.txt")
+features <- read.table("./data/UCI HAR Dataset/features.txt")
 
-activity_Lables <- read.table("activity_labels.txt")
+activity_Lables <- read.table("./data/UCI HAR Dataset/activity_labels.txt")
 
 ## Giving column names to activity_Labels
 colnames(activity_Lables) <- c('ActivityID','Activity_Type')
@@ -71,7 +71,7 @@ columntWithActivityNames$ActivityID <- factor(columntWithActivityNames$ActivityI
 
 columntWithActivityNames <- select(columntWithActivityNames,-Activity_Type)
 
-View(columntWithActivityNames)
+##View(columntWithActivityNames)
 
 #### 4. Appropriately labels the data set with descriptive variable names.
 
